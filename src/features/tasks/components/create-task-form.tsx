@@ -57,7 +57,7 @@ export const CreateTaskForm = ({
           form.reset();
           onCancel?.();
         },
-      }
+      },
     );
   };
 
@@ -155,7 +155,16 @@ export const CreateTaskForm = ({
                   <FormItem>
                     <FormLabel>Received on</FormLabel>
                     <FormControl>
-                      <DatePicker {...field} />
+                      <DatePicker
+                        value={
+                          field.value
+                            ? field.value instanceof Date
+                              ? field.value
+                              : new Date(field.value)
+                            : undefined
+                        }
+                        onChange={field.onChange}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
