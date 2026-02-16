@@ -151,29 +151,32 @@ export const CreateTaskForm = ({
               <FormField
                 control={form.control}
                 name="dueDate"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Received on</FormLabel>
-                    <FormControl>
-                      <DatePicker
-                        value={
-                          field.value
-                            ? field.value instanceof Date
-                              ? field.value
-                              : new Date(field.value)
-                            : undefined
-                        }
-                        onChange={(date) => {
-                          form.setValue("dueDate", date, {
-                            shouldValidate: true,
-                            shouldDirty: true,
-                          });
-                        }}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
+                render={({ field }) => {
+                  console.log("Hello");
+                  return (
+                    <FormItem>
+                      <FormLabel>Received on</FormLabel>
+                      <FormControl>
+                        <DatePicker
+                          value={
+                            field.value
+                              ? field.value instanceof Date
+                                ? field.value
+                                : new Date(field.value)
+                              : undefined
+                          }
+                          onChange={(date) => {
+                            form.setValue("dueDate", date, {
+                              shouldValidate: true,
+                              shouldDirty: true,
+                            });
+                          }}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  );
+                }}
               />
               <FormField
                 control={form.control}
