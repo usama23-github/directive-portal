@@ -2,7 +2,7 @@
 
 import { useMedia } from "react-use";
 
-import { Dialog, DialogContent, DialogTitle } from "./ui/dialog";
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from "./ui/dialog";
 import { Drawer, DrawerContent, DrawerTitle } from "./ui/drawer";
 
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
@@ -28,6 +28,7 @@ export const ResponsiveModal = ({
           {/* REQUIRED for Radix accessibility and proper focus handling */}
           <VisuallyHidden>
             <DialogTitle>Modal</DialogTitle>
+            <DialogDescription>This modal allows creating a new task directive</DialogDescription>
           </VisuallyHidden>
 
           {children}
