@@ -163,7 +163,11 @@ export const CreateTaskForm = ({
                               : new Date(field.value)
                             : undefined
                         }
-                        onChange={(date) => field.onChange(date)}
+                        onChange={(date) =>
+                          form.setValue("dueDate", date, {
+                            shouldValidate: true,
+                          })
+                        }
                       />
                     </FormControl>
                     <FormMessage />
